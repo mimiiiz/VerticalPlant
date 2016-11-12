@@ -20,5 +20,25 @@
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:id="@+id/tv1"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btAddPlant"
+        android:text="add plant"
+        android:layout_below="@+id/tv1"
+        android:onClick="toAddPlantActivity"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgV1"
+        android:layout_below="@+id/btAddPlant"/>
+</RelativeLayout>
 
 </LinearLayout>
