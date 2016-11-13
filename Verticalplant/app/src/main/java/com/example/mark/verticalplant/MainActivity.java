@@ -7,11 +7,13 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -36,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == 1){
             if (resultCode == AddPlantActivity.RESULT_ADD_PLANT){
                 Uri uri = data.getParcelableExtra("imageUri");
-                ImageView imgv1 = (ImageView) findViewById(R.id.imgV1);
+                ImageButton imgv1 = (ImageButton) findViewById(R.id.imgV1);
+                CardView cardView = (CardView) findViewById(R.id.new_card_view);
+                cardView.setVisibility(View.VISIBLE);
                 ContentResolver cr = getContentResolver();
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(cr, uri);
