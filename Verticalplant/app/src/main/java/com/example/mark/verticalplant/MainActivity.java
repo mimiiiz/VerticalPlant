@@ -30,11 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    protected void toAddPlantActivity(View view){
-        Intent toAddPlantActivity = new Intent(this, AddPlantActivity.class);
-        startActivityForResult(toAddPlantActivity, 1);
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -74,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addNewPlant() {
-        //start Add plant activity
+        Intent toAddPlantActivity = new Intent(this, AddPlantActivity.class);
+        startActivityForResult(toAddPlantActivity, 1);
     }
 }
