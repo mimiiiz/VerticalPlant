@@ -87,13 +87,14 @@
                         android:textSize="30dp"
                         android:padding="5dp"
                         android:background="@color/colorPrimary"/>
-                    
+
                     <ImageButton
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:id="@+id/imgV1"
                         android:src="@drawable/spinach"
-                        android:scaleType="centerCrop"/>
+                        android:scaleType="centerCrop"
+                        android:onClick="waterPlant" />
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -129,8 +130,6 @@
 
             </android.support.v7.widget.CardView>
 
-
-
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_weight="8.37"
@@ -150,7 +149,8 @@
                     <ImageButton
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
-                        android:src="@drawable/spinach"/>
+                        android:src="@drawable/spinach"
+                        android:onClick="waterPlant"/>
 
                     <LinearLayout
                         android:orientation="horizontal"
