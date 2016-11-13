@@ -12,8 +12,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -29,6 +31,7 @@ public class AddPlantActivity extends AppCompatActivity {
     public static final int RESULT_ADD_PLANT = 5;
     ImageView imgv;
     Uri uri;
+    EditText plantName;
 
 
     @Override
@@ -73,8 +76,10 @@ public class AddPlantActivity extends AppCompatActivity {
     }
 
     protected void submitPlant(View view){
+        plantName = (EditText) findViewById(R.id.etName);
         Intent toMain = new Intent(this, MainActivity.class);
         toMain.putExtra("imageUri", uri);
+        toMain.putExtra("plantName", plantName.getText().toString());
         setResult(RESULT_ADD_PLANT, toMain);
         finish();
     }
