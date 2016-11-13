@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,9 +43,11 @@ public class MainActivity extends AppCompatActivity {
                 CardView cardView = (CardView) findViewById(R.id.new_card_view);
                 cardView.setVisibility(View.VISIBLE);
                 ContentResolver cr = getContentResolver();
+                TextView plantName = (TextView) findViewById(R.id.plantName);
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(cr, uri);
                     imgv1.setImageBitmap(bitmap);
+                    plantName.setText(data.getStringExtra("plantName"));
                     Toast.makeText(getApplicationContext(), uri.getPath(), Toast.LENGTH_SHORT).show();
                 }catch (Exception e){
                     Log.d(">>>> log ", e.toString());
