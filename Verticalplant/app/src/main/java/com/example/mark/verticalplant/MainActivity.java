@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(cr, uri);
                     imgv1.setImageBitmap(bitmap);
                     plantName.setText(data.getStringExtra("plantName"));
-                    Toast.makeText(getApplicationContext(), uri.getPath(), Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), uri.getPath(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Plant Added", Toast.LENGTH_SHORT).show();
                 }catch (Exception e){
                     Log.d(">>>> log ", e.toString());
                     Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
