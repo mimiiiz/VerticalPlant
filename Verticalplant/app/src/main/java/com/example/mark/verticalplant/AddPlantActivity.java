@@ -1,7 +1,9 @@
 package com.example.mark.verticalplant;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Environment;
@@ -30,7 +32,8 @@ public class AddPlantActivity extends AppCompatActivity {
     ImageView imgv;
     Uri uri;
 
-
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +79,14 @@ public class AddPlantActivity extends AppCompatActivity {
         Intent toMain = new Intent(this, MainActivity.class);
         toMain.putExtra("imageUri", uri);
         setResult(RESULT_ADD_PLANT, toMain);
+
+        sharedPreferences = getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+        editor.putBoolean("newCard", true);
+        editor.commit();
+
         finish();
+
     }
 }

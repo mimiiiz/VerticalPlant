@@ -73,8 +73,7 @@
                 android:layout_weight="8.37"
                 android:layout_margin="15dp"
                 android:layout_height="250dp"
-                android:id="@+id/new_card_view"
-                android:visibility="gone">
+                android:id="@+id/new_card_view">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -92,7 +91,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:id="@+id/imgV1"
-                        android:src="@drawable/spinach"
                         android:scaleType="centerCrop"
                         android:onClick="waterPlant" />
 
@@ -163,15 +161,15 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="Watered 1 day ago"
-                            android:layout_weight="0.51" />
+                            android:layout_weight="0.51"
+                            android:id="@+id/water_status" />
 
                         <TextView
-                            android:text="50 %"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.51"
-                            android:textAlignment="textEnd" />
+                            android:textAlignment="textEnd"
+                            android:id="@+id/water_percent"/>
                     </LinearLayout>
 
                     <ProgressBar
@@ -179,8 +177,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="10dp"
                         android:max="100"
-                        android:progress="50"
-                        android:paddingTop="5dp"/>
+                        android:paddingTop="5dp"
+                        android:id="@+id/water_progress"/>
 
                 </LinearLayout>
 
